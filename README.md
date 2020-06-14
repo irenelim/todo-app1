@@ -1,4 +1,144 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[markdown guide](https://www.markdownguide.org/)
+
+### Deploy to Firebase
+https://www.robinwieruch.de/firebase-deploy-react-js
+
+### Build with
+* create-react-app
+* [react-router](https://github.com/ReactTraining/react-router)
+* [material ui](https://material-ui.com/components/)
+* [rechart](http://recharts.org/en-US/examples/TwoSimplePieChart)
+
+#### phase 2
+* [immutable state - immer](https://github.com/immerjs/immer)
+* [material-table](https://github.com/mbrn/material-table)
+example (https://material-ui.com/components/tables/#material-table)
+
+### colours
+* header #537178
+* button #5285EC
+* input fill #EEF1F8, no border
+* label / placeholder #7A7D7E
+* chartFill = "#E8ECEC";
+* statisticTxt #8F9EA2
+
+### truncate / ellipsis
+ `truncateCell: {
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
+    },`
+
+### search component
+[search](https://material-ui.com/components/autocomplete/#search-input)
+
+#### API LOGIN (https://dev.teledirectasia.com:3092/docs/)
+`POST https://dev.teledirectasia.com:3092/login` <br /> 
+`param {
+  "name": "Jan Doe",
+  (ID) "apiKey": "78f009a758d96757" 
+}`
+<br />
+response: 
+`{
+  "msg": "401: Incorrect apiKey"
+}`
+`{
+  "msg": "User logged in successfully",
+  "token": {
+    "name": "Jan Doe",
+    "token": "6cf3477c1a90f91077377f04" *** Authorize key / token ***
+  },
+  "image": "/images/profile.jpg"
+}`
+
+#### API Dashboard
+`GET https://dev.teledirectasia.com:3092/dashboard`
+response:
+`200 OK 
+{
+  "msg": "Dashboard data was retrieved successfully.",
+  "tasksCompleted": 0,
+  "totalTasks": 0,
+  "latestTasks": []
+}
+{
+  "tasksCompleted": 10,
+  "totalTasks": 19,
+  "latestTasks": [
+    {
+      "name": "Refactor something",
+      "completed": false
+    }
+  ]
+}`
+`401 unAuthorize {
+  "msg": "401: Bearer token is not specified."
+}`
+
+#### API Tasks: Get All Tasks
+`GET https://dev.teledirectasia.com:3092/tasks`
+response: array or {msg}
+`
+{
+  "msg": "Tasks were listed successfully.",
+  "tasks": []
+}
+
+[
+  {
+    "name": "Refactor something",
+    "completed": false
+  }
+]`
+
+#### API Tasks: Add new task
+`POST https://dev.teledirectasia.com:3092/tasks`
+`param {
+  "name": "Refactor something"
+}
+`response {
+  "name": "Refactor something",
+  "completed": false
+}`
+`data.task: {
+completed: false
+createdAt: "2020-06-12T07:12:17.590Z"
+createdBy: "5ee0ad4495466c2105a19286"
+name: "read"
+updatedAt: "2020-06-12T07:12:17.590Z"
+__v: 0
+_id: "5ee32ad195466c2105a1929e"
+}`
+
+#### API Tasks: Edit task {id(string)}
+Edit a task by ID, Use this to mark complete or edit a task name
+`PUT https://dev.teledirectasia.com:3092/tasks/1`
+`data.task: {
+completed: false
+createdAt: "2020-06-12T07:12:17.590Z"
+createdBy: "5ee0ad4495466c2105a19286"
+name: "read"
+updatedAt: "2020-06-12T07:12:17.590Z"
+__v: 0
+_id: "5ee32ad195466c2105a1929e"
+}`
+
+#### API Tasks: Delete task {id(string)}
+`DELETE https://dev.teledirectasia.com:3092/tasks/1`
+{
+  "msg": "Category was deleted successfully",
+  "task": {
+    "completed": true,
+    "_id": "5ee32ad195466c2105a1929e",
+    "name": "read",
+    "createdBy": "5ee0ad4495466c2105a19286",
+    "createdAt": "2020-06-12T07:12:17.590Z",
+    "updatedAt": "2020-06-13T11:27:51.462Z",
+    "__v": 0
+  }
+}
 
 ## Available Scripts
 
@@ -27,42 +167,14 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Installation
+just click to install: ``
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## incomplete requirement
+1. mobile view - no margin
+2. mobile view - search section with large input and button.
+3. missing font: 'Monserrat'
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
