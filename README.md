@@ -3,6 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Deploy to Firebase
 https://www.robinwieruch.de/firebase-deploy-react-js
+ - my-todo
 
 ### Build with
 * create-react-app
@@ -168,7 +169,7 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### Installation
-just click to install: ``
+just plug and play: `https://my-todo-499b5.web.app`
 
 
 ## incomplete requirement
