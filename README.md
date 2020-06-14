@@ -1,6 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 [markdown guide](https://www.markdownguide.org/)
 
+## Installation
+just plug and play: `https://my-todo-499b5.web.app`
+
 ### Deploy to Firebase
 https://www.robinwieruch.de/firebase-deploy-react-js
  - my-todo
@@ -167,9 +170,6 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### Installation
-just plug and play: `https://my-todo-499b5.web.app`
 
 
 ## incomplete requirement
