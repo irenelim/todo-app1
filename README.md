@@ -1,8 +1,17 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). <br/>
 [markdown guide](https://www.markdownguide.org/)
+
+https://github.com/irenelim/todo-app1.git
 
 ## Installation
 just plug and play: `https://my-todo-499b5.web.app`
+
+## install from git
+`git clone https://github.com/irenelim/todo-app1.git`
+
+`npm install`
+
+`npm start`
 
 ### Deploy to Firebase
 https://www.robinwieruch.de/firebase-deploy-react-js
@@ -176,6 +185,9 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 1. mobile view - no margin
 2. mobile view - search section with large input and button.
 3. missing font: 'Monserrat'
+<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+
+
 
 
 
