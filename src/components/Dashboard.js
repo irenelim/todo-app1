@@ -27,6 +27,12 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         height: '70vh'
     },
+    box: {
+        margin: theme.spacing(3, 0),
+        [theme.breakpoints.up('sm')]: {
+            padding: theme.spacing(0, 3),
+        }
+    }
 }));
 
 function tasksReducer(state, action){
@@ -215,7 +221,8 @@ function Dashboard() {
             {tasks.length===0 ? ( 
                 <NoTask title={newTitle} handleNewTaskDialogOpen={handleNewTaskDialogOpen}/>
             ) : ( 
-                <Box display="flex" flexDirection="column" justifyContent="center" my={3} px={3}> 
+                <Box display="flex" flexDirection="column" justifyContent="center" className={classes.box}> 
+                {/* my={3} px={3} */}
                     <StatisticArea data={dashboard} />
                     <SearchBox title={newTitle}
                         handleNewTaskDialogOpen={handleNewTaskDialogOpen} 

@@ -8,11 +8,11 @@ import {
   } from "@material-ui/core";
 import { PieChart, Pie, Sector, ResponsiveContainer } from 'recharts';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        height: 200,
-    }
-}));
+// const useStyles = makeStyles((theme) => ({
+//     root: {
+//         height: 200,
+//     }
+// }));
 
   const highlight = "#5285EC";
 
@@ -51,10 +51,10 @@ const useStyles = makeStyles((theme) => ({
 
 function CardPieChart(props) {
     const { data } = props;
-    const classes = useStyles(); 
+    // const classes = useStyles(); 
 
     return (
-        <Card className={classes.root}>
+       
             <CardContent>
                 <Box height="250px">
                     <ResponsiveContainer width="100%" height="50%">
@@ -70,7 +70,6 @@ function CardPieChart(props) {
                     </ResponsiveContainer>
                 </Box>
             </CardContent>
-        </Card>
     );
 }
 

@@ -179,15 +179,3 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-
-## incomplete requirement
-1. mobile view - no margin
-2. mobile view - search section with large input and button.
-3. missing font: 'Monserrat'
-<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-
-
-
-
-

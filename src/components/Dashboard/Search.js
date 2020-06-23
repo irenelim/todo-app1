@@ -5,6 +5,12 @@ import { makeStyles, fade, Typography, Button, InputBase, Box, Grid
 import SearchIcon from '@material-ui/icons/Search';
 
 const useStyles = makeStyles((theme) => ({
+    box:{
+        margin: theme.spacing(3),
+        [theme.breakpoints.up("sm")]: {
+            margin: '2rem 0 1rem',
+          },
+    },
     search: {
         position: 'relative',
         borderRadius: theme.shape.borderRadius,
@@ -44,12 +50,26 @@ const useStyles = makeStyles((theme) => ({
     //     width: '20ch',
     //   },
     // },
+    [theme.breakpoints.down('sm')]: {
+        paddingTop: '8px',
+        paddingBottom: '8px'
+      }
   },
   alignment: {
     textAlign: 'center',
     [theme.breakpoints.up('sm')]: {
       textAlign: 'left'
     }
+  },
+  button: {
+    [theme.breakpoints.down('sm')]: {
+        padding: `8px 22px`,
+    }
+  },
+  noPaddingTop: {
+      [theme.breakpoints.down('sm')]: {
+          paddingTop: `0 !important`,
+      }
   }
 }));
 
@@ -66,7 +86,7 @@ function SearchBox (props) {
     }, [reset, handleSearchTasks])
 
     return (
-        <div style={{ margin: '2rem 0 1rem' }}>
+        <Box className={classes.box}>
         <Grid container spacing={3}>
             <Grid item xs={12} md={7}>
                 <Box className={classes.alignment}>
@@ -94,13 +114,14 @@ function SearchBox (props) {
                     />
                 </div>
             </Grid>
-            <Grid item xs={12} md={2}>
+            <Grid item xs={12} md={2} className={classes.noPaddingTop}>
                 <Button
                     fullWidth
                     type="button"
                     variant="contained"
                     disableElevation
                     color="primary"
+                    className={classes.button}
                     onClick={(e)=>{
                         e.preventDefault();
                         handleNewTaskDialogOpen()
@@ -110,7 +131,7 @@ function SearchBox (props) {
                 </Button>
             </Grid>
         </Grid>
-        </div>
+        </Box>
     );
 }
 
