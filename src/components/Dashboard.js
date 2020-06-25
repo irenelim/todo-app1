@@ -113,8 +113,8 @@ function Dashboard() {
                 const initTasks = result.data.tasks;
                 dispatch({type: "GET_TASKS", payload: initTasks });
                 dispatch({type: "GET_QUERY_TASKS", payload: initTasks });
-            }
-            dispatch({type: "IN_PROGRESS", payload: false });     
+                dispatch({type: "IN_PROGRESS", payload: false });   
+            }              
         };
 
         fetchDashboard();

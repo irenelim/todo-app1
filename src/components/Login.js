@@ -45,7 +45,7 @@ function Login() {
                         });
             }
         }catch(err){
-            setErrorMsg("invalid id.")
+            setErrorMsg("try this secret ID 78f009a758d96757")
         }
                    
     };
