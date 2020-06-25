@@ -1,18 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Grid, Box, Typography, Card, makeStyles } from "@material-ui/core";
+import {
+  Grid,
+  Box,
+  Typography,
+  Card,
+  makeStyles,
+  useTheme,
+  useMediaQuery,
+} from "@material-ui/core";
 import CardPieChart from "./CardPieChart";
 import CommonCard from "./CommonCard";
 
 const useStyles = makeStyles((theme) => ({
   card: {
     height: 200,
-    borderRadius: 0,
-    boxShadow: `0 4px 2px -2px rgba(0,0,0,0.2)`,
-    [theme.breakpoints.up("sm")]: {
-      borderRadius: "8px",
-      boxShadow: `0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)`,
-    },
+    // borderRadius: 0,
+    // boxShadow: `0 4px 2px -2px rgba(0,0,0,0.2)`,
+    // [theme.breakpoints.up("sm")]: {
+    //   borderRadius: "8px",
+    //   boxShadow: `0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)`,
+    // },
   },
 }));
 
@@ -73,11 +81,18 @@ function StatisticsArea(props) {
     { name: "Completed Tasks", value: +data.tasksCompleted },
     { name: "", value: +data.totalTasks - data.tasksCompleted },
   ];
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("sm"));
+
   return (
     data && (
       <Grid container spacing={3}>
         <Grid item xs={12} sm={4}>
-          <Card className={classes.card}>
+          <Card
+            className={classes.card}
+            square={!matches}
+            elevation={matches ? 1 : 4}
+          >
             <CommonCard
               title="Tasks Completed"
               content={renderPercentage(data.tasksCompleted, data.totalTasks)}
@@ -85,7 +100,11 @@ function StatisticsArea(props) {
           </Card>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Card className={classes.card}>
+          <Card
+            className={classes.card}
+            square={!matches}
+            elevation={matches ? 1 : 4}
+          >
             <CommonCard
               title="Latest Created Tasks"
               content={renderLatest(data.latestTasks)}
@@ -93,7 +112,11 @@ function StatisticsArea(props) {
           </Card>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Card className={classes.card}>
+          <Card
+            className={classes.card}
+            square={!matches}
+            elevation={matches ? 1 : 4}
+          >
             <CardPieChart data={pieData} />
           </Card>
         </Grid>
