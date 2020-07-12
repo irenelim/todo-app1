@@ -93,7 +93,7 @@ function Dashboard() {
         dashboard: null,
         tasks: initialTasks,
         queryTasks: initialTasks,
-        isLoading: true,
+        isLoading: false,
         reset: false,
     }); 
     const [isNewTaskDialogOpen, setIsNewTaskDialogOpen] = useState(false);
@@ -108,6 +108,7 @@ function Dashboard() {
         };      
 
         const fetchTasks = async () =>{ 
+            
             const result = await axios.get(`https://dev.teledirectasia.com:3092/tasks`, headers(user.token));
             if (result.data && result.data.tasks && result.data.tasks.length>0){
                 const initTasks = result.data.tasks;
@@ -116,7 +117,7 @@ function Dashboard() {
                 dispatch({type: "IN_PROGRESS", payload: false });   
             }              
         };
-
+        dispatch({type: "IN_PROGRESS", payload: true }); 
         fetchDashboard();
         fetchTasks();
 
