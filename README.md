@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 https://github.com/irenelim/todo-app1.git
 
 ## Installation
-just plug and play: `https://my-todo-499b5.web.app`
+just plug and play: [todo-App](https://my-todo-499b5.web.app)
 
 ## install from git
 `git clone https://github.com/irenelim/todo-app1.git`

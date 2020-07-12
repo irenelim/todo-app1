@@ -222,7 +222,6 @@ function Dashboard() {
                 <NoTask title={newTitle} handleNewTaskDialogOpen={handleNewTaskDialogOpen}/>
             ) : ( 
                 <Box display="flex" flexDirection="column" justifyContent="center" className={classes.box}> 
-                {/* my={3} px={3} */}
                     <StatisticArea data={dashboard} />
                     <SearchBox title={newTitle}
                         handleNewTaskDialogOpen={handleNewTaskDialogOpen} 
